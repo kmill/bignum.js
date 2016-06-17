@@ -1,6 +1,6 @@
 # Introduction
 
-bignum.js is a Javascript library for doing arbitrary-precision
+`bignum.js` is a Javascript library for doing arbitrary-precision
 arithmetic with naturals, integers, rationals, and computable reals.
 
 # How to use
@@ -18,8 +18,8 @@ instances of `N`, `Z`, `Q`, and `R`.
 - `abs(a)` returns the absolute value of `a`.
 - `prod(a, b)` returns the product of `a` and `b`.
 - `divMod(a, b)` returns an object with the quotient and remainder as
-  `div` and `mod`, respectively.  These satisfy the relationship `div
-  * b + mod = a`, with `div` being `a/b` rounded toward negative
+  `div` and `mod`, respectively.  These satisfy the relationship `div * b + mod = a`,
+  with `div` being `a/b` rounded toward negative
   infinity.  Both `a` and `b` must be integers.
 - `quot(a,b)` computes the quotient of `a` and `b`.  The result is a
   rational or real.
@@ -28,7 +28,7 @@ instances of `N`, `Z`, `Q`, and `R`.
 - `ipow(a,b)` returns `a` raised to the power of `b`.  `b` must be a
   Javascript integer, and `a` cannot (yet) be a real number.
 - `factorial(a)` returns the factorial of `a`.
-- 'compare(a,b)` returns `sign(a - b)`, with `sign(0)=0`.
+- `compare(a,b)` returns `sign(a - b)`, with `sign(0)=0`.
 
 
 # Implementation
@@ -79,3 +79,10 @@ textbook epsilon-delta proofs.
 
 There is an algorithm for square roots given in `test_bignum.js`, but
 it is very naive.
+
+Beware that computable real numbers cannot be compared, since such an
+operation is not computable.  The problem is that, while you can check
+numbers digit-by-digit for equality, you have no idea how many digits
+you will have to inspect before the numbers diverge.  You can ask
+whether two numbers are within some positive rational distance from
+each other, however.
