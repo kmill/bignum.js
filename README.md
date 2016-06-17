@@ -13,9 +13,11 @@ It is written as a `node` module.  Simply `var bignum =
 require('./bignum.js');`.  In addition to the numeric types, the
 module also exposes the following functions:
 
-- `num` is used to construct numbers.  This is generally unnecessary
-  as the other library functions will construct numbers for you.
-  `num` converts `N` to `Z`.
+- `num(o)` is used to construct a number from object `o`.  This is
+  generally unnecessary as the other library functions will construct
+  numbers for you.  `num` converts `N` to `Z`, parses strings,
+  converts Javascript numbers, and returns integers, rationals, and
+  reals as-is.
 - `sum(a,b)` and `diff(a,b)` compute the sum and difference of `a` and
   `b`, respectively.
 - `negate(a)` returns the negative of `a`.
