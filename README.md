@@ -52,6 +52,13 @@ Computer Programming*, by Knuth.
 An integer (`Z`) is an immutable object wrapping an `N` and a sign (1
 or -1; we use the convention that 0 is positive).
 
+Methods:
+- `z.toString(base)` returns a string representation of the integer in
+  a given base (defaults to base 10).
+- `z.toPrecision(digs)` returns a scientific notation representation
+  of the integer with the given number of digits (defaults to 16
+  digits).
+
 ## Rationals
 
 A rational (`Q`) is an immutable object wrapping a pair of integers,
@@ -62,6 +69,23 @@ Rationals can be created directly from a floating-point number.  We
 use a Farey sequence to obtain the rational with least denominator
 whose binary expansion matches every bit of the original
 floating-point number.
+
+Methods:
+- `q.toString(base)` returns a string representation of the rational
+  number a given base (defaults to base 10).
+- `q.toPrecision(digs)` returns a scientific notation representation
+  of the rational number with the given number of digits (defaults to
+  16 digits).  The algorithm is base-10 long division.
+- `q.toFixed(digs)` is like `toPrecision`, but is given in as a
+  fixed-point string representation.
+
+Static methods:
+- `Q.ifrac(a)` returns the integer and fractional part of `a` as an
+  object.  `ipart` is an integer and `fpart` is a rational.
+- `Q.cfrac(a)` returns a continued fraction representation of `a` as a
+  list of integers.
+- `Q.fromCfrac(cfrac)` returns the rational number represented by the
+  continued fraction representation `cfrac`.
 
 ## Reals
 
@@ -86,3 +110,9 @@ numbers digit-by-digit for equality, you have no idea how many digits
 you will have to inspect before the numbers diverge.  You can ask
 whether two numbers are within some positive rational distance from
 each other, however.
+
+Methods:
+- `r.toFixed(digs)` returns a fixed-point representation of the real
+  number evaluated to the given number of digits past the decimal
+  point.
+- `r.toString()` calls `r.toFixed(16)`.
