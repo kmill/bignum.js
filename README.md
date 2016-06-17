@@ -66,8 +66,8 @@ floating-point number.
 ## Reals
 
 A computable real (`R`) is a function which takes a rational number
-`r` and produces a rational number `q_r` such that for any rational `s
-> r`, `|q_r - q_s| < r`.  This is equivalent to a Cauchy sequence.
+`r` and produces a rational number `q_r` such that for any rational
+`s > r`, `|q_r - q_s| < r`.  This is equivalent to a Cauchy sequence.
 
 As an optimization, a computable real also memoizes its result, so
 that the most-accurate result obtained so far will be the one returned
