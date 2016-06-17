@@ -18,8 +18,8 @@ module also exposes the following functions:
   numbers for you.  `num` converts `N` to `Z`, parses strings,
   converts Javascript numbers, and returns integers, rationals, and
   reals as-is.
-- `sum(a,b)` and `diff(a,b)` compute the sum and difference of `a` and
-  `b`, respectively.
+- `sum(a,b)` and `diff(a,b)` respectively compute the sum and
+  difference of `a` and `b`.
 - `negate(a)` returns the negative of `a`.
 - `abs(a)` returns the absolute value of `a`.
 - `prod(a, b)` returns the product of `a` and `b`.
