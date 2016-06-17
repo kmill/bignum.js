@@ -10,7 +10,7 @@ in Lisp.  Numbers may be given as Javascript numbers, strings, or
 instances of `N`, `Z`, `Q`, and `R`.
 
 It is written as a `node` module.  Simply `var bignum =
-require('./bignum.js');'.  In addition to the numeric types, the
+require('./bignum.js');`.  In addition to the numeric types, the
 module also exposes the following functions:
 
 - `num` is used to construct numbers.  This is generally unnecessary
