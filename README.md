@@ -9,6 +9,10 @@ The library gives an interface for `Z`, `Q`, and `R` as a numeric stack, as
 in Lisp.  Numbers may be given as Javascript numbers, strings, or
 instances of `N`, `Z`, `Q`, and `R`.
 
+It is written as a `node` module.  Simply `var bignum =
+require('./bignum.js');'.  In addition to the numeric types, the
+module also exposes the following functions:
+
 - `num` is used to construct numbers.  This is generally unnecessary
   as the other library functions will construct numbers for you.
   `num` converts `N` to `Z`.
@@ -47,6 +51,14 @@ large numbers.
 Division uses Algorithm D from 4.3.1 of Volume 2 of *The Art of
 Computer Programming*, by Knuth.
 
+Methods:
+- `n.toString(base)` returns a string representation of the natural
+  number in a given base (defaults to base 10).
+
+Functions:
+- `N.choose(a, b)` computes the binomial coefficient of natural
+  numbers `a` and `b`.
+
 ## Integers
 
 An integer (`Z`) is an immutable object wrapping an `N` and a sign (1
@@ -79,13 +91,15 @@ Methods:
 - `q.toFixed(digs)` is like `toPrecision`, but is given in as a
   fixed-point string representation.
 
-Static methods:
+Functions:
 - `Q.ifrac(a)` returns the integer and fractional part of `a` as an
   object.  `ipart` is an integer and `fpart` is a rational.
 - `Q.cfrac(a)` returns a continued fraction representation of `a` as a
   list of integers.
 - `Q.fromCfrac(cfrac)` returns the rational number represented by the
   continued fraction representation `cfrac`.
+- `Q.choose(a, b)` computes the binomial coefficient for `a` a
+  rational and `b` an integer.
 
 ## Reals
 
